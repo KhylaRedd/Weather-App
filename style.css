@@ -28,11 +28,11 @@ input {
     width: calc(100% - 16px);
     padding: 8px;
     box-sizing:border-box;
-   border-radius: 10px;======
+   border-radius: 10px;
    border: 1px solid snow;
    margin-top: 20px;
 }
-   
+
 button{
     background: darkred;
     color:whitesmoke;
