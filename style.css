@@ -29,8 +29,8 @@ input {
     padding: 8px;
     box-sizing:border-box;
    border-radius: 10px;======
-   border: 1px snow;
-   margin-top 20px;
+   border: 1px solid snow;
+   margin-top: 20px;
 }
    
 button{
