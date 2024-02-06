@@ -76,20 +76,27 @@ function displayHourlyForecast(hourlyData) {
     const hourlyForecastDiv = document.getElementById('hourly-forecast');
     const next24Hours = hourlyData.slice(0, 8);
 
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
     next24Hours.forEach(item => {
 
-        const dateTime = new Date(item * 1000);
+        const dateTime = new Date(item.dt * 1000);
+        const dayOfWeek = daysOfWeek[dateTime.getDay()];
+
+
         const hour = dateTime.getHours();
         const temperature = Math.round(item.main.temp - 273.15);
         const iconCode = item.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
       const hourlyItemHtml = `
-             <div class="hourly-item">
-                 <span>${hour}:00</span>
-                 <img src="${iconUrl}" alt="Hourly Weather Icon">
+            <div class="hourly-item">
+                <span>${dayOfWeek}</span> <!-- Display day of the week -->
+                <span>${hour}:00</span>
+                <img src="${iconUrl}" alt="Hourly Weather Icon">
                 <span>${temperature}°C</span>
-             </div>
+        </div>
+`; 
         `; 
         hourlyForecastDiv.innerHTML += hourlyItemHtml;
 
